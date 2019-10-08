@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaClassVec;
+package vec;
 
 import java.util.Scanner;
 
@@ -13,22 +13,34 @@ import java.util.Scanner;
  */
 public class metOrdeBurb01 {
     public static void main(String[] args) {
+        //ingresa datos por teclado
         Scanner entrada = new Scanner(System.in);
         
+        //definicion de variables
         int vector[];
         int x;
         int nElem;
         
+        //ingresamos tamaño de vector por pop up
         System.out.println("Ingrese el numero elementos para el vector");        
         nElem=entrada.nextInt();
         
+        //vector
         vector=new int[nElem];
         
+        //llenado de vector
         for (int i = 0; i < nElem; i++) {
             System.out.println("Ingrese el numero "+ (i+1));
             vector[i]=entrada.nextInt();
         }
         
+        //vector en el orden ingresado
+        System.out.println("Vector en el orden ingresado");
+        for (int i = 0; i < nElem; i++) {
+            System.out.println(vector[i]);
+        }
+        
+        //contador
         x=nElem-2;
         
         //metodo burbuja
@@ -40,7 +52,21 @@ public class metOrdeBurb01 {
                     vector[j+1]=aux;
                 }
             }
+            
+            //contador
             x=nElem-1;
+        }
+        
+        //mostrar vector ordenado en forma ascendente
+        System.out.println("Vector ordenado en forma ascendente");
+        for (int i = 0; i < nElem; i++) {
+            System.out.println(vector[i]);
+        }
+        
+        //mostrar vector ordenado en forma descendente
+        System.out.println("Vector ordenado en forma descendente");
+        for (int i = (nElem-1); i >= 0; i--) {
+            System.out.println(vector[i]);
         }
         
     }
