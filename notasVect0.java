@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vec;
+package vectores;
 
 import java.util.Scanner;
+//import javax.swing.JOptionPane;
 
 //Dada las calificaciones de n estudiantes, obtener:
 //Calificacion mayor y menor
@@ -25,7 +26,7 @@ public class notasVect {
         
         //Definimos variables
         double [] califiEstu;
-        int cantEstu;
+        int cantEstu, posi_num=0, h=0;
         
         //solicitamos la cantidad de estudiante
         System.out.println("Ingrese la cantidad de estudiante");
@@ -36,8 +37,8 @@ public class notasVect {
         
         //ingreamos la notas
         System.out.println("Registro de notas de cada estudiante en orden");
-        for (int i = 0; i < cantEstu; i++) {
-            System.out.println((i+1)+"Ingrese la nota del estudiante ");
+        for (int i = 0; i < cantEstu/2; i++) {
+            System.out.println("Ingrese la nota del estudiante "+(i+1));
             califiEstu[i] = entrada.nextDouble();
         }
         
@@ -59,7 +60,26 @@ public class notasVect {
                 j--;
             }
             califiEstu[j] = aux;
+        }       
+        
+        
+        //ingresamos una nueva notas
+        System.out.println("Ingrese otra nota");
+        double nota = entrada.nextDouble();
+        
+        //buscar la posicion donde va el numero
+        while (califiEstu[h]<nota && h<cantEstu/2) {            
+            posi_num++;
+            h++;
         }
+        
+        //insertamos el numero y corremos una posicion el numero anterior
+        for (int i = (cantEstu/2)-1; i >= posi_num; i--) {
+            califiEstu[i+1] = califiEstu[i];
+        }
+        
+        //insertamos el numero
+        califiEstu[posi_num] = nota;
         
         //mayor
         double mayor = califiEstu[0];
