@@ -22,7 +22,7 @@ public class Vectores {
      
     System.out.print("------------------------\n");
     
-    double[] nota = new double[n]; // aqui se declara el vector
+    double[] nota = new double[n+2]; // aqui se declara el vector
     
     for (int j = 0; j < n; j++) { // aqui se llena el vector
         e=e+1;
@@ -89,12 +89,21 @@ public class Vectores {
      System.out.print("------------------------\n");
     
     // aqui insertamos la nueva nota
+    for(int ab=1;ab<3;<b++){
     System.out.print("ingrese la Nota nueva " +"\n");
-    double notan = leer.nextDouble();  
-    for (int i=0; i < nota.length; i++) { 
-        
+    double notan = leer.nextDouble();
+            int ac=0;
+            int posicion=0
+            while(notan>V[ac])&&(i<n)){
+            posicion=posicion+1;
+                ac=ac+1;
+            }
+    for (int i=n; i>=posicion; i--) { 
+        V[i]=V[i-1];
      }
-    
+            V[posicion]=notan;
+            n=n+1;
+     }
     
      System.out.print("------------------------\n");
     
