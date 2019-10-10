@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vectores;
+package vec;
 
 import java.util.Scanner;
 
@@ -89,21 +89,21 @@ public class Vectores {
      System.out.print("------------------------\n");
     
     // aqui insertamos la nueva nota
-    for(int ab=1;ab<3;<b++){
-    System.out.print("ingrese la Nota nueva " +"\n");
-    double notan = leer.nextDouble();
-            int ac=0;
-            int posicion=0
-            while(notan>V[ac])&&(i<n)){
-            posicion=posicion+1;
-                ac=ac+1;
+        for (int ab = 1; ab < 3; ab++) {
+            System.out.print("ingrese la Nota nueva " + "\n");
+            double notan = leer.nextDouble();
+            int ac = 0;
+            int posicion = 0;
+            while (notan > nota[ac] && ac < n) {
+                posicion = posicion + 1;
+                ac = ac + 1;
             }
-    for (int i=n; i>=posicion; i--) { 
-        V[i]=V[i-1];
-     }
-            V[posicion]=notan;
-            n=n+1;
-     }
+            for (int i = n; i >= posicion; i--) {
+                nota[i] = nota[i - 1];
+            }
+            nota[posicion] = notan;
+            n = n + 1;
+        }
     
      System.out.print("------------------------\n");
     
