@@ -51,7 +51,7 @@ public class buscarNombres {
                 + " a buscar en la lista"));
         
         //busqueda del nombre ingresado
-        while (inicio < listNombres.length && !listNombres[inicio].equals(buscNombre)) {            
+        while (!listNombres[inicio].equals(buscNombre)) {            
             inicio++;
         }
         
